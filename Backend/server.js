@@ -30,6 +30,10 @@ app.use('/uploads', express.static('uploads'));
 app.use(passport.initialize());
 
 // 4. ROUTES
+app.get("/", (req, res) => {
+  res.send("Social Media Platform Backend is Live and Running!");
+});
+
 app.use("/api/auth", authRoutes); 
 app.use("/api/user",isLoggedIn, userRoutes); 
 app.use("/api/posts",isLoggedIn, postRoutes);
